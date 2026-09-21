@@ -2,6 +2,8 @@ export type ApiStatus = {
   ok: boolean;
   app: string;
   domain: string;
+  database: string;
+  d1: string;
   mysql: string;
   redis: string;
   dynamodb: string;

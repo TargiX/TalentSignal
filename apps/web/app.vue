@@ -312,6 +312,8 @@ const apiStatusRows = computed(() => {
 
   return [
     { label: "API", value: statusValue?.ok ? "Operational" : "Checking" },
+    { label: "Data", value: statusValue?.database ?? "checking" },
+    { label: "Cloudflare D1", value: statusValue?.d1 ?? "checking" },
     { label: "MySQL", value: statusValue?.mysql ?? "checking" },
     { label: "Redis", value: statusValue?.redis ?? "checking" },
     { label: "DynamoDB", value: statusValue?.dynamodb ?? "checking" },
@@ -743,7 +745,7 @@ onMounted(async () => {
               </div>
               <Button variant="ghost" size="icon" class="relative overflow-visible" aria-label="Notifications">
                 <Bell class="size-5 text-[#151a19]" />
-                <span class="absolute right-0.5 top-0.5 grid size-4 place-items-center rounded-full bg-[#ef4f45] text-[10px] font-bold leading-none text-white">{{ notificationCount }}</span>
+                <span class="absolute -right-0.5 -top-0.5 grid size-4 place-items-center rounded-full bg-[#ef4f45] text-[10px] font-bold leading-none text-white ring-2 ring-white">{{ notificationCount }}</span>
               </Button>
               <Avatar class="size-9">
                 <AvatarImage src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&q=80" alt="" />
